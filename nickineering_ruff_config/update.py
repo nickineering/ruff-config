@@ -12,5 +12,5 @@ def update_ruff_base() -> None:
     dest_file = Path.cwd() / filename
     shutil.copy(src_file, dest_file)
     logging.info(
-        "The up to date nickineering-ruff-base.toml was copied to the current working directory."
+        "The up to date %s was copied to the current working directory.", filename
     )
