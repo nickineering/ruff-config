@@ -2,7 +2,8 @@
 
 ![PyPI - Version](https://img.shields.io/pypi/v/nickineering-ruff-config)
 
-An aggressive Ruff config designed to get as much as possible from Ruff quickly.
+A shareable Ruff starting config designed to get as much as possibly from Ruff
+quickly.
 
 ## Usage
 
