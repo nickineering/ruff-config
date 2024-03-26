@@ -11,7 +11,7 @@ Ruff supported configuration file in your project root. Inside that file extend
 this config like so:
 
 ```toml
-extend = ["nickineering-ruff-config/ruff.toml"]
+extend = "nickineering-ruff-base.toml"
 
 # Override these settings, or add your own here
 
@@ -20,13 +20,30 @@ extend = ["nickineering-ruff-config/ruff.toml"]
 docstring-code-format = false
 ```
 
+You will also need to create a script to copy the file, since Ruff does not
+support extending from a package. This is a Poetry script which does that as an
+example:
+
+```toml
+[tool.poetry.scripts]
+update-ruff-base = "nickineering_ruff_config:update_ruff_base"
+```
+
+You could then run it with `poetry run update-ruff-base`. This would need to be
+re-run to install new versions of this package.
+
 Although it is not required, I recommend creating a `Makefile` or other command
 runner so that calls to Ruff run both the lint and format commands. An example
 `Makefile` is below:
 
 ```makefile
+configure:
+    poetry install
+    poetry run update-ruff-base
+
 lint:
-    ruff format && ruff check --fix
+    ruff format
+    ruff check --fix
 ```
 
 ## Publishing
