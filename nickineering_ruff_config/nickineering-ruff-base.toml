@@ -1,3 +1,7 @@
+# Automatically generated file. Do not edit outside of the ruff-config repo.
+# This serves as a base Ruff configuration which should be extended like so:
+# extend = "nickineering-ruff-base.toml"
+
 extend-include = ["*.ipynb"]
 
 [format]
