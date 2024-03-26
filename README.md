@@ -7,9 +7,13 @@ quickly.
 
 ## Usage
 
-Install [Ruff](https://docs.astral.sh/ruff/) and create a `ruff.toml` or another
-Ruff supported configuration file in your project root. Inside that file extend
-this config like so:
+```bash
+pip install ruff nickineering-ruff-config
+```
+
+Pip install this package, [Ruff](https://docs.astral.sh/ruff/), and create a
+`ruff.toml` or another Ruff supported configuration file in your project root.
+Inside that file extend this config like so:
 
 ```toml
 extend = "nickineering-ruff-base.toml"
