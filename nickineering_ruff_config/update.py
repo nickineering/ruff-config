@@ -12,6 +12,5 @@ def update_ruff_base() -> None:
     dest_file = Path.cwd() / filename
     shutil.copy(src_file, dest_file)
     logging.info(
-        "Default ruff config copied to %s. You now need to extend it in ruff.toml.",
-        dest_file,
+        "The up to date nickineering-ruff-base.toml was copied to the current working directory."
     )

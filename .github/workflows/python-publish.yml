@@ -23,7 +23,8 @@ jobs:
           echo ::set-output name=TAG_NAME::$(echo $GITHUB_REF | cut -d / -f 3)
       - name: Update version in pyproject.toml
         run: >-
-          sed -i "s/0.0.0/${{ steps.tag.outputs.TAG_NAME }}/g" pyproject.toml
+          sed -i "s/0.0.0-dev/${{ steps.tag.outputs.TAG_NAME }}/g"
+          pyproject.toml
       - name: Install Poetry package manager
         run: |
           curl -sSL https://install.python-poetry.org | python -

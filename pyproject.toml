@@ -1,11 +1,10 @@
 [tool.poetry]
 name = "nickineering-ruff-config"
-version = "0.0.0"
+version = "0.0.0-dev"
 description = "An aggressive Ruff config designed to get as much as possible from Ruff quickly."
 authors = ["Nicholas Ferrara <nferrara100@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "src" }]
 repository = "https://github.com/nickineering/ruff-config.git"
 keywords = [
     "config",
