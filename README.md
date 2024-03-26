@@ -1,5 +1,7 @@
 # Nickineering's Default Ruff Config
 
+![PyPI - Version](https://img.shields.io/pypi/v/nickineering-ruff-config)
+
 An aggressive Ruff config designed to get as much as possible from Ruff quickly.
 
 ## Usage
@@ -30,4 +32,4 @@ lint:
 ## Publishing
 
 A Github Action is automatically run deploying this code to PyPi when a new
-version is published in Github.
+release is published in Github.
