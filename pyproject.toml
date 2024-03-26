@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "nickineering-ruff-config"
 version = "{{VERSION_PLACEHOLDER}}"
-description = "An aggressive Ruff config designed to get as much as possibly from Ruff quickly."
+description = "An aggressive Ruff config designed to get as much as possible from Ruff quickly."
 authors = ["Nicholas Ferrara <nferrara100@gmail.com>"]
 license = "MIT"
 readme = "README.md"
