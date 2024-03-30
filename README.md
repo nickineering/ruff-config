@@ -39,15 +39,21 @@ update-ruff-base = "nickineering_ruff_config:update_ruff_base"
 You could then run it with `poetry run update-ruff-base`. This would need to be
 re-run to install new versions of this package.
 
-You probably want to add the output to your `.gitignore` so you can rely only on
-the package. To do so add the following: `nickineering-ruff-base.toml`.
+Finally, add the output to your `.gitignore` so you can rely only on the
+package.
 
-Although it is not required, I recommend creating a `Makefile` or other command
-runner so that calls to Ruff run both the lint and format commands. An example
-`Makefile` is below:
+```gitignore
+# Automatically updated configuration file from nickineering-ruff-config
+nickineering-ruff-base.toml
+```
+
+It is also recommended to create a `Makefile` or other command runner to
+document that the update-ruff-base command must be run when installing the
+project and so that calls to Ruff run both the lint and format commands. An
+example `Makefile` is below:
 
 ```makefile
-configure:
+setup:
     poetry install
     poetry run update-ruff-base
 
