@@ -33,11 +33,12 @@ ignore = [
 ]
 
 [lint.extend-per-file-ignores]
-"*.pyi" = [
-    "ANN401", # Require argument annotations
-]
 "test_*" = [
     "ANN201", # Require function return types
+    "ANN202", # Require inner function return types
     "S101",   # Prohibit assert keyword
     "TID252", # Prohibit relative imports
+]
+"*.pyi" = [
+    "ANN401", # Require argument annotations
 ]
