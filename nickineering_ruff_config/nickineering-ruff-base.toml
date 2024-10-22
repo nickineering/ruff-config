@@ -24,6 +24,7 @@ ignore = [
     "D105",   # Docs
     "D106",   # Docs
     "D107",   # Docs
+    "D203",   # Conflicts with formatter
     "D211",   # Docs
     "D213",   # Docs
     "E501",   # Line length (otherwise enforced by formatter)
