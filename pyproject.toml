@@ -2,7 +2,7 @@
 name = "nickineering-ruff-config"
 version = "0.0.0-dev"
 description = "A shareable Ruff starting config designed to get as much as possibly from Ruff quickly."
-authors = ["Nicholas Ferrara <nferrara100@gmail.com>"]
+authors = ["Nicholas Ferrara <git@nicholasferrara.net>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/nickineering/ruff-config.git"

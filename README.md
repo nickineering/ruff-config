@@ -21,7 +21,6 @@ extend = "nickineering-ruff-base.toml"
 # Override these settings, or add your own here
 
 # For example:
-target-version = "py313"
 
 [format]
 docstring-code-format = false
