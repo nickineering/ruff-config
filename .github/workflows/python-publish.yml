@@ -12,28 +12,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
         with:
-          python-version: "3.x"
+          version: "latest"
+      - name: Set up Python
+        run: uv python install
       - name: Extract tag name
         id: tag
-        run:
-          echo ::set-output name=TAG_NAME::$(echo $GITHUB_REF | cut -d / -f 3)
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       - name: Update version in pyproject.toml
         run: >-
           sed -i "s/0.0.0-dev/${{ steps.tag.outputs.TAG_NAME }}/g"
           pyproject.toml
-      - name: Install Poetry package manager
+      - name: Build package with uv
         run: |
-          curl -sSL https://install.python-poetry.org | python -
-      - name: Authenticate Poetry with PyPi
+          uv build
+      - name: Publish package with uv
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
         run: |
-          poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
-      - name: Build package with Poetry
-        run: |
-          poetry build
-      - name: Publish package with Poetry
-        run: |
-          poetry publish
+          uv publish

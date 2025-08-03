@@ -1,11 +1,15 @@
-[tool.poetry]
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
 name = "nickineering-ruff-config"
 version = "0.0.0-dev"
 description = "A shareable Ruff starting config designed to get as much as possibly from Ruff quickly."
-authors = ["Nicholas Ferrara <git@nicholasferrara.net>"]
-license = "MIT"
+authors = [{ name = "Nicholas Ferrara", email = "git@nicholasferrara.net" }]
+requires-python = "~=3.7"
 readme = "README.md"
-repository = "https://github.com/nickineering/ruff-config.git"
+license = "MIT"
 keywords = [
     "config",
     "configuration",
@@ -21,10 +25,5 @@ classifiers = [
     "Intended Audience :: Developers",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.7"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[project.urls]
+Repository = "https://github.com/nickineering/ruff-config.git"
